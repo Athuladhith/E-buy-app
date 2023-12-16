@@ -5,7 +5,7 @@ const adminAuth = require("../middleware/adminAuth");
 
 const session = require("express-session");
 const config = require("../config/config");
-admin_route.use(session({ secret: config.sessionSecret }));
+admin_route.use(session({resave: true,saveUninitialized: true, secret: config.sessionSecret }));
 
 const adminController = require('../controllers/adminController')
 const categoryController=require('../controllers/categoryController')
